@@ -1,9 +1,15 @@
-# RGT - Bluetooth Steering Controller 
-This project is to create steering buttons for Wahoo RGT using an ESP32 and it is suitable for PC, Android, and Apple (iPad & TV). Testing has mostly been done on Apple since the PC version I recommend using the [RGT Arduino USB Steering Solution](https://github.com/JC-Concepts/RGT-Arduino_USB_Steer). The concept is to make the ESP32 to act as an Bluetooth keyboard and send the characters 'a' (left) and 'd' (right) commands.
+# Wahoo RGT - Bluetooth Steering Controller (Recommend for Apple)
 
-At the date of release (3/1/2023) Wahoo RGT (for Apple devices) has some odd latency in their code. It prevents "trigger happy" button presses. That means if you press too fast, your avatar will not respond and sometimes locks up the steering for a brief moment. In order to click and change multiple lanes, you will need to click, wait for your avatar to commit (start moving) to lane change then click again. Therefore feeling a delay in steering opportunity. 
+This project is to create steering buttons for Wahoo RGT using an ESP32 and it is suitable for PC, Android, and Apple (iPad & TV) via Bluetooth. Testing has mostly been done on **Apple** since for PC version I recommend using [RGT Arduino USB Steering Solution](https://github.com/JC-Concepts/RGT-Arduino_USB_Steer). The concept is to make the ESP32 act as a Bluetooth keyboard and send the characters 'a' (left) and 'd' (right) commands.
 
-To overcome this latency issue, I've masked this latency by having steering work as a **Press & Hold** instead of individual discrete button presses. This eliminates the guessing work of when you can click again without RGT missing a click or freezing up steering, and therefore saving you seconds (or a fraction of a second). 
+At the date of release (3/2/2023) Wahoo RGT (for Apple devices) has some odd latency in their code (which RGT did confirm with me). It prevents "trigger happy" button presses. That means if you press too fast, your avatar will not respond and sometimes locks up the steering for a brief moment. In order to click and change multiple lanes, you will need to click, wait for your avatar to commit (start moving) to lane change then click again. Therefore feeling a delay in steering opportunity. 
+
+To overcome this latency issue, I've masked latency by having steering work as a **Press & Hold** instead of individual discrete button presses. This eliminates the guessing work of when you can click again without RGT missing a click or freezing up steering, and therefore saving you seconds (or a fraction of a second). 
+
+**Sinlge Lane Change: Press once to steer**
+
+**Multi-Lane Change: Press & Hold to steer**
+
 
 ## Software Installation Notes:
 * This was flashed using Arduino IDE 1.8.19 if you are using Arduino 2.0.x there might be some additional settings you will need to modify in the IDE preferences. 
@@ -13,6 +19,7 @@ To overcome this latency issue, I've masked this latency by having steering work
 * Will require [NimBLE-Arduino Library](https://github.com/h2zero/NimBLE-Arduino). This was built with **Version 1.4.1**
 
 If you are new to working with ESP32 in Arduino. When compiling & building, the upload might fail because it could not connect to the ESP32. To overcome this, during the firmware upload and it says "connecting" press and hold the **boot** button beside the USB connector. 
+
 <img src="https://user-images.githubusercontent.com/126370788/222343254-f07b5201-430b-4a2b-aacc-c6e9df203103.png" alt="ESP32 Boot Button" title="ESP32 Boot Button">
 
 
