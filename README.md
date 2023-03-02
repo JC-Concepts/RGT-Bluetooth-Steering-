@@ -1,4 +1,4 @@
-# Wahoo RGT - Bluetooth Steering Controller 
+# RGT - Bluetooth Steering Controller 
 This project is to create steering buttons for Wahoo RGT using an ESP32 and it is suitable for PC, Android, and Apple (iPad & TV). Testing has mostly been done on Apple since the PC version I recommend using the [RGT Arduino USB Steering Solution](https://github.com/JC-Concepts/RGT-Arduino_USB_Steer). The concept is to make the ESP32 to act as an Bluetooth keyboard and send the characters 'a' (left) and 'd' (right) commands.
 
 At the date of release (3/1/2023) Wahoo RGT (for Apple devices) has some odd latency in their code. It prevents "trigger happy" button presses. That means if you press too fast, your avatar will not respond and sometimes locks up the steering for a brief moment. In order to click and change multiple lanes, you will need to click, wait for your avatar to commit (start moving) to lane change then click again. Therefore feeling a delay in steering opportunity. 
@@ -8,8 +8,12 @@ To overcome this latency issue, I've masked this latency by having steering work
 ## Software Installation Notes:
 * This was flashed using Arduino IDE 1.8.19 if you are using Arduino 2.0.x there might be some additional settings you will need to modify in the IDE preferences. 
 * Follow the [Espressif documentation](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) on using ESP32 in Arduino IDE. This was built using **Version 1.0.4**
+* Will require [CP210x USB driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) for your computer to recognize the ESP32 dev board 
 * Will require the [ESP32 BLE Keyboard Library](https://github.com/T-vK/ESP32-BLE-Keyboard). This was built using the [**Unofficial Version 0.3.3**](https://github.com/T-vK/ESP32-BLE-Keyboard/issues/168#issuecomment-1172483419) 
 * Will require [NimBLE-Arduino Library](https://github.com/h2zero/NimBLE-Arduino). This was built with **Version 1.4.1**
+
+If you are new to working with ESP32 in Arduino. When compiling & building, the upload might fail because it could not connect to the ESP32. To overcome this, during the firmware upload and it says "connecting" press and hold the **boot** button beside the USB connector. 
+<img src="https://user-images.githubusercontent.com/126370788/222343254-f07b5201-430b-4a2b-aacc-c6e9df203103.png" alt="ESP32 Boot Button" title="ESP32 Boot Button">
 
 
 ## Bill of Materials:
@@ -23,8 +27,13 @@ To overcome this latency issue, I've masked this latency by having steering work
 
 ## Schematic:
 
+ 
 <img src="https://user-images.githubusercontent.com/126370788/222050207-bb4d1ff8-e4bf-4519-8de7-322727e3fb1c.png" alt="Schematic" title="Schematic">
 
+
+## Other Wahoo RGT Keyboard Command:
+* **p**: Push to Talk
+* **t**: Opens the Chat box
 
 
 ## Hardware Installation Notes:
@@ -38,3 +47,8 @@ To overcome this latency issue, I've masked this latency by having steering work
 <img src="https://user-images.githubusercontent.com/126370788/221392142-773b0838-bffe-4697-9338-dc0e4f6b5d25.png" alt="Mounted on Hood" title="Mounted on Hood" height="500" width="500" >
 <img src="https://user-images.githubusercontent.com/126370788/221392171-1d6f0b53-b0fe-4620-9c53-d61f71be0e96.png" alt="Splash proof Package" title="Splash Proof Container"height="473" width="800" >
 
+# Like this Project? 
+You can buy me a gel, coffee, or inner tube
+
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RE2GQDK8CD2WW)
