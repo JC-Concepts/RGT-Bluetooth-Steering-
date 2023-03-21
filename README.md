@@ -1,4 +1,4 @@
-# Wahoo RGT - Bluetooth Steering Controller (Recommend for Apple)
+# Wahoo RGT - Bluetooth Steering Controller (Works with Apple, Windows, and Android)
 
 This project is to create steering buttons for Wahoo RGT using an ESP32 and it is suitable for PC, Android, and Apple (iPad & TV) via Bluetooth. Testing has mostly been done on **Apple** since for PC version I recommend using [RGT Arduino USB Steering Solution](https://github.com/JC-Concepts/RGT-Arduino_USB_Steer). The concept is to make the ESP32 act as a Bluetooth keyboard and send the characters 'a' (left) and 'd' (right) commands.
 
@@ -49,13 +49,15 @@ If you are new to working with ESP32 in Arduino. When compiling & building, the 
 - Waterproofing the switch, you can use a small plastic bag or food wrap to seal it
 - Cheap alternative to waterproof the ESP32 is to put it into a kids food container (easily found at the dollar store)
 
-**Example pictures**
-
-<img src="https://user-images.githubusercontent.com/126370788/221392142-773b0838-bffe-4697-9338-dc0e4f6b5d25.png" alt="Mounted on Hood" title="Mounted on Hood" height="500" width="500" >
-<img src="https://user-images.githubusercontent.com/126370788/221392171-1d6f0b53-b0fe-4620-9c53-d61f71be0e96.png" alt="Splash proof Package" title="Splash Proof Container"height="473" width="800" >
-
 # Like this Project? 
 You can buy me a gel, coffee, or inner tube
 
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RE2GQDK8CD2WW)
+
+
+**Example pictures**
+
+<img src="https://user-images.githubusercontent.com/126370788/221392142-773b0838-bffe-4697-9338-dc0e4f6b5d25.png" alt="Mounted on Hood" title="Mounted on Hood" height="500" width="500" >
+<img src="https://user-images.githubusercontent.com/126370788/221392171-1d6f0b53-b0fe-4620-9c53-d61f71be0e96.png" alt="Splash proof Package" title="Splash Proof Container"height="473" width="800" >
+
