@@ -2,7 +2,9 @@
 
 This project is to create steering buttons for Wahoo RGT using an ESP32 and it is suitable for PC, Android, and Apple (iPad & TV) via Bluetooth. Testing has mostly been done on **Apple** since for PC version I recommend using [RGT Arduino USB Steering Solution](https://github.com/JC-Concepts/RGT-Arduino_USB_Steer). The concept is to make the ESP32 act as a Bluetooth keyboard and send the characters 'a' (left) and 'd' (right) commands.
 
-#### Apple Device Users  
+____
+
+### Apple Device Users  
 At the date of release (3/2/2023) Wahoo RGT (for Apple devices) has some odd latency in their code (which RGT did confirm with me). It prevents "trigger happy" button presses. That means if you press too fast, your avatar will not respond and sometimes locks up the steering for a brief moment. In order to click and change multiple lanes, you will need to click, wait for your avatar to commit (start moving) to lane change then click again. Therefore feeling a delay in steering opportunity. 
 
 To overcome this latency issue, I've masked latency by having steering work as a **Press & Hold** instead of individual discrete button presses. This eliminates the guessing work of when you can click again without RGT missing a click or freezing up steering, and therefore saving you seconds (or a fraction of a second). 
@@ -18,7 +20,9 @@ You will need comment out (by adding **//** in front) this line in the main code
 And uncomment this line in the main code: 
 > const unsigned long TIME_INTERVAL = 550;
 
-#### Windows & Android Device Users  
+____
+
+### Windows & Android Device Users  
 I would not recommend using the press & hold feature since you can get a much faster steering response using standard method. To make sure you **do not have Press & Hold** enabled, make sure these two changes are in the code.
 
 You will need comment out (by adding **//** in front) this line in the main code:
