@@ -2,13 +2,30 @@
 
 This project is to create steering buttons for Wahoo RGT using an ESP32 and it is suitable for PC, Android, and Apple (iPad & TV) via Bluetooth. Testing has mostly been done on **Apple** since for PC version I recommend using [RGT Arduino USB Steering Solution](https://github.com/JC-Concepts/RGT-Arduino_USB_Steer). The concept is to make the ESP32 act as a Bluetooth keyboard and send the characters 'a' (left) and 'd' (right) commands.
 
+#### Apple Device Users  
 At the date of release (3/2/2023) Wahoo RGT (for Apple devices) has some odd latency in their code (which RGT did confirm with me). It prevents "trigger happy" button presses. That means if you press too fast, your avatar will not respond and sometimes locks up the steering for a brief moment. In order to click and change multiple lanes, you will need to click, wait for your avatar to commit (start moving) to lane change then click again. Therefore feeling a delay in steering opportunity. 
 
 To overcome this latency issue, I've masked latency by having steering work as a **Press & Hold** instead of individual discrete button presses. This eliminates the guessing work of when you can click again without RGT missing a click or freezing up steering, and therefore saving you seconds (or a fraction of a second). 
 
-**Sinlge Lane Change: Press once to steer**
+**Single Lane Change: Press once to steer**
 
 **Multi-Lane Change: Press & Hold to steer**
+
+To enable **Press & Hold** 
+You will need comment out (by adding **//** in front) this line in the main code:
+> const unsigned long TIME_INTERVAL = 100;
+
+And uncomment this line in the main code: 
+> const unsigned long TIME_INTERVAL = 550;
+
+#### Windows & Android Device Users  
+I would not recommend using the press & hold feature since you can get a much faster steering response using standard method. To make sure you **do not have Press & Hold** enabled, make sure these two changes are in the code.
+
+You will need comment out (by adding **//** in front) this line in the main code:
+> const unsigned long TIME_INTERVAL = 550;
+
+And uncomment this line in the main code: 
+> const unsigned long TIME_INTERVAL = 100;
 
 
 ## Software Installation Notes:
@@ -43,11 +60,6 @@ If you are new to working with ESP32 in Arduino. When compiling & building, the 
 * **t**: Opens the Chat box
 
 
-## Hardware Installation Notes:
-- Sample picture: tactile switch hot glued to a scrap plastic from food packaging
-- Switch assembly is held onto the hood using Aelastic 
-- Waterproofing the switch, you can use a small plastic bag or food wrap to seal it
-- Cheap alternative to waterproof the ESP32 is to put it into a kids food container (easily found at the dollar store)
 
 # Like this Project? 
 You can buy me a gel, coffee, or inner tube
@@ -56,7 +68,14 @@ You can buy me a gel, coffee, or inner tube
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RE2GQDK8CD2WW)
 
 
-**Example pictures**
+## Hardware Installation Notes:
+- Sample picture: tactile switch hot glued to a scrap plastic from food packaging
+- Switch assembly is held onto the hood using Aelastic 
+- Waterproofing the switch, you can use a small plastic bag or food wrap to seal it
+- Cheap alternative to waterproof the ESP32 is to put it into a kids food container (easily found at the dollar store)
+
+
+## Example pictures:
 
 <img src="https://user-images.githubusercontent.com/126370788/221392142-773b0838-bffe-4697-9338-dc0e4f6b5d25.png" alt="Mounted on Hood" title="Mounted on Hood" height="500" width="500" >
 <img src="https://user-images.githubusercontent.com/126370788/221392171-1d6f0b53-b0fe-4620-9c53-d61f71be0e96.png" alt="Splash proof Package" title="Splash Proof Container"height="473" width="800" >
